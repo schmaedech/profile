@@ -17,16 +17,20 @@ $("html").mousemove(function(e) {
 //    y = e.pageY - offset.top;
     logX.push(x);
     logY.push(y);
+    var r = function () { return Math.floor(Math.random()*256) }; 
+    $("footer").css('color', "rgba(" + r() + "," + r() + "," + r() + "," + r()/256+ ")");
+    // $("footer").css('color', 'rgba(0,0,0,1)');
 });
 
-$("html").mouseup(function(e) { 
-    var canvas = document.getElementById("hackmouse"), ctx = canvas.getContext("2d"); 
+$("html").mouseup(function(e) {
+    var canvas = document.getElementById("hackmouse"), ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight; 
+    canvas.height = window.innerHeight;
     ctx.fillStyle = "rgba(255,0,10, .1)";
     for (var i = 0; i < logX.length; i++) {
         ctx.fillRect(logX[i], logY[i], Math.random() * 10, Math.random() * 10);
     }
+
 });
 $('#contact-form').submit(function() {
     var submitData = $(this).serialize();
