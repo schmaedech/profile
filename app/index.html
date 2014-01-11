@@ -1,14 +1,24 @@
 <!doctype html>
-<!--steps to create this page:
 
+<!--  
+/*
+ * ----------------------------------------------------------------------------
+ * "THE DRINKWARE LICENSE" (Revision 1):
+ * <diego@schmaedech.com> wrote this file. You can do anything with this file.  
+ * There are no licences. But you can help by paying a coffee or my green server.
+ * <a href="http://www.dreamhost.com/donate.cgi?id=17405">
+ * <img border="0" alt="Donate towards my web hosting bill!" src="https://secure.newdream.net/donate4.gif" /> </a> 
+ * or please! 
+ * http://www.dreamhost.com/donate.cgi?id=17405 
+ * ----------------------------------------------------------------------------
+ */ 
 -->
-
 <html lang="en" ng-app="myApp">
     <head> 
         <title>Diego Schmædech</title>
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
         <meta name="description" content="Diego Schmaedech" />
-        <meta name="keywords" content="diego schmaedech, portifolio, life style, hacking, virtual world" />
+        <meta name="keywords" content="diego schmaedech, portifolio, profile, life style, hacking, virtual world" />
         <meta name="author" content="Diego Schmaedech" /> 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
         <link rel="shortcut icon" href="images/favicon.ico"> 
@@ -18,7 +28,7 @@
         <link rel="stylesheet" href="css/font-awesome.min.css"> 
     </head>
     <body>
-
+        <canvas id="hackmouse" width="0" height="0"></canvas>
         <div class="menu">
             <a href="#/view1" role="button">Persona</a> 
             <a href="#/view2" role="button">Work</a> 
@@ -32,82 +42,40 @@
 
         <div class="copyright">app v<span app-version></span>
             <div id="social-bar"> 
-                <a href="https://google.com/+DiegoSchmaedech">
+                <a href="https://google.com/+DiegoSchmaedech" target="_blank">
                     <i class="fa fa-google-plus"></i>
                     <span></span>
                 </a>
-                <a href="http://www.linkedin.com/pub/diego-schmaedech/9/a27/a78">
+                <a href="https://www.youtube.com/channel/UCxgxn5jdS_AGGGaTXUJujew" target="_blank">
+                    <i class="fa fa-youtube"></i>
+                    <span></span>
+                </a>
+                <a href="http://www.linkedin.com/pub/diego-schmaedech/9/a27/a78" target="_blank">
                     <i class="fa fa-linkedin"></i>
                     <span></span>
                 </a>
-                <a href="https://github.com/schmaedech">
+                <a href="https://github.com/schmaedech" target="_blank">
                     <i class="fa fa-github"></i>
                     <span></span>
                 </a>
-                <a href="https://twitter.com/DiegoSchmaedech">
+                <a href="https://twitter.com/DiegoSchmaedech" target="_blank">
                     <i class="fa fa-twitter"></i>
                     <span></span>
                 </a>
-                <a href="https://www.facebook.com/schmaedech">
+                <a href="https://www.facebook.com/schmaedech" target="_blank">
                     <i class="fa fa-facebook"></i>
                     <span></span>
                 </a>
-                <a href="http://www.dreamhost.com/green.cgi?schmaedech.com">
+                <a href="http://www.dreamhost.com/green.cgi?schmaedech.com" target="_blank">
                      <i class="fa fa-globe"></i> 
                      <span></span>
                 </a>
             </div>
-        </div>
-
-        <div class="md-modal md-effect-1" id="modal-1">
-            <div class="md-content"> 
-                <iframe id="resume" src="" height="100%" width="100%" frameborder="0"> </iframe> 
-                <div>   
-                    <button class="md-close btn btn-primary">Close</button>
-                </div>
-            </div>
-        </div>
-        <div class="md-modal md-effect-1" id="modal-2">
-            <div class="md-content"> 
-                <iframe id="company" src="" height="100%" width="100%" frameborder="0"> </iframe>  
-                <div>   
-                    <button class="md-close btn btn-primary">Close</button>
-                </div>
-            </div>
-        </div>
-        <div class="md-modal md-effect-1" id="modal-3">
-            <div class="md-content"> 
-                <div class="form-group">
-                    <form id="contact-form" method="post" action="#" >
-                        <br>
-                        <label>Your info</label>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <input class="form-control" type="text" name="name" maxlength="255" placeholder="Name" />
-                            </div>
-                            <div class="col-sm-4">
-                                <input class="form-control" type="text" name="email" maxlength="100" placeholder="Email" />
-                            </div>
-                            <div class="col-sm-4">
-                                <input class="form-control" type="text" name="subject" placeholder="Subject" />
-                            </div>
-                        </div>
-                        <br>
-                        <label>Message</label>
-                        <textarea class="form-control" name="message" placeholder="Message">  </textarea>
-                        <br>
-                        <input type="submit" class="btn btn-primary" value="Send" />
-                        <div class="data-status"> </div>  
-                    </form>
-                </div>
-                <div>   
-                    <button class="md-close btn btn-primary">Close</button>
-                </div>
-            </div>
         </div> 
+        
         <div class="md-overlay"></div> 
         <footer>
-            <p>{{ '&copy; Diego Schmaedech 1982' | interpolate }}</p>
+            <p>{{ '&copy; Diego Schmædech 1982™' | interpolate }}</p>
         </footer>
         <!-- classie.js by @desandro: https://github.com/desandro/classie -->
         <script src="js/classie.js"></script>

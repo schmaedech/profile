@@ -2,7 +2,7 @@
 
 if (isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
     if (isset($_POST['name']) AND isset($_POST['email']) AND isset($_POST['subject']) AND isset($_POST['message'])) {
-        $to = 'schmaedech@gmail.com';
+        $to = 'schmaedech@gmail.com';//please put ours.
 
         $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
         $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);

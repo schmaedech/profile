@@ -64,7 +64,8 @@ function MyCtrl1() {
 function MyCtrl2() {
     initModal();
     document.getElementById('resume').src = "http://lattes.cnpq.br/6542682937656418";
-    document.getElementById('company').src = "http://www.cognisense.com.br";
+    document.getElementById('cognisense').src = "http://www.cognisense.com.br";
+    document.getElementById('neovu').src = "http://www.neovu.com.br";
 
 
 }
@@ -153,7 +154,7 @@ function MyCtrl3() {
     $("#heatmapArea").click(function() {
         $(this).slideUp();
     });
-     $("#btn-try-with-me").click(function() {
+    $("#btn-try-with-me").click(function() {
         $("#heatmapArea").slideToggle();
     });
 }

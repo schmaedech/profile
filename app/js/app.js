@@ -4,15 +4,30 @@ var movementStrength = 15;
 
 var height = movementStrength / $(window).height();
 var width = movementStrength / $(window).width();
+var logX = new Array();
+var logY = new Array();
 
 $("html").mousemove(function(e) {
     var x = e.pageX;
     var y = e.pageY;
     $(this).css('background-position', +parseInt(-x / 10) + 'px ' + parseInt(-y / 10) + 'px');
     $(".jumbotron").css('margin', parseInt(-x / 100) + parseInt(-y / 100) + 'px');
-
+//    var offset = $(this).offset();
+//    x = e.pageX - offset.left;
+//    y = e.pageY - offset.top;
+    logX.push(x);
+    logY.push(y);
 });
 
+$("html").mouseup(function(e) { 
+    var canvas = document.getElementById("hackmouse"), ctx = canvas.getContext("2d"); 
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight; 
+    ctx.fillStyle = "rgba(255,0,10, .1)";
+    for (var i = 0; i < logX.length; i++) {
+        ctx.fillRect(logX[i], logY[i], Math.random() * 10, Math.random() * 10);
+    }
+});
 $('#contact-form').submit(function() {
     var submitData = $(this).serialize();
     var $name = $(this).find('input[name="name"]');
@@ -58,7 +73,7 @@ $('#contact-form').submit(function() {
     });
     return false;
 });
- 
+
 
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
