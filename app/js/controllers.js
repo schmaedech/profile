@@ -4,10 +4,21 @@
 
 
 var myApp = angular.module('myApp.controllers', []);
+
+myApp.controller('NavCtrl', ['$scope', '$location', NavCtrl]);
 myApp.controller('MyCtrl1', [MyCtrl1]);
 myApp.controller('MyCtrl2', [MyCtrl2]);
 myApp.controller('MyCtrl3', [MyCtrl3]);
 
+var heatmap = null;
+
+function NavCtrl($scope, $location) {
+    $scope.navClass = function (page) {
+        var currentRoute = $location.path().substring(1) || 'view1';
+        return page === currentRoute ? 'active' : '';
+    }; 
+}
+ 
 var heatmap = null;
 
 function MyCtrl1() {
@@ -61,6 +72,7 @@ function MyCtrl1() {
     initModal();
 
 }
+
 function MyCtrl2() {
     initModal();
     document.getElementById('resume').src = "http://lattes.cnpq.br/6542682937656418";
@@ -70,7 +82,7 @@ function MyCtrl2() {
 
 }
 function MyCtrl3() {
-
+    initModal();
     var config = {
         element: document.getElementById("heatmapArea"),
         radius: 15,
@@ -198,6 +210,7 @@ function initModal() {
         });
 
     });
+
 
 }
 

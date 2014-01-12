@@ -1,3 +1,16 @@
+<?php
+
+function data_uri($file, $mime) {
+    $contents = file_get_contents($file);
+    $base64 = base64_encode($contents);
+    return "data:" . $mime . ";base64," . $base64;
+}
+
+if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip'))
+    ob_start("ob_gzhandler");
+else
+    ob_start();
+?>
 <!doctype html>
 
 <!--  
@@ -13,7 +26,7 @@
  * ----------------------------------------------------------------------------
  */ 
 -->
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="myApp" style="background-image: <?php echo data_uri('img/d.JPG', 'image/jpg'); ?>">
     <head> 
         <title>Diego Schmædech</title>
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -29,12 +42,31 @@
     </head>
     <body>
         <canvas id="hackmouse" width="0" height="0"></canvas>
-        <div class="menu">
-            <a href="#/view1" role="button">Persona</a> 
-            <a href="#/view2" role="button">Work</a> 
-            <a href="#/view3" role="button">Playing</a>  
-        </div>
+         
+        <!-- .navbar -->
+        <nav class="navbar navbar-default" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+            </div>
 
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul ng-controller="NavCtrl" class="nav navbar-nav">
+                    <li class="active" ng-class="navClass('view1')"><a href="#/view1" role="button">Persona</a> </li>
+                    <li ng-class="navClass('view2')"><a href="#/view2" role="button">Work</a></li>
+                    <li ng-class="navClass('view3')"><a href="#/view3" role="button">Playing</a>  </li>
+                   
+                </ul>
+                 
+            </div><!-- /.navbar-collapse -->
+        </nav>
         <div class="container">
             <div ng-view>
             </div> 
@@ -67,12 +99,12 @@
                     <span></span>
                 </a>
                 <a href="http://www.dreamhost.com/green.cgi?schmaedech.com" target="_blank">
-                     <i class="fa fa-globe"></i> 
-                     <span></span>
+                    <i class="fa fa-globe"></i> 
+                    <span></span>
                 </a>
             </div>
         </div> 
-        
+
         <div class="md-overlay"></div> 
         <footer>
             <p>{{ '&copy; Diego Schmædech 1982™' | interpolate }}</p>
