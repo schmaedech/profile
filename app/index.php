@@ -1,18 +1,10 @@
-<?php
-
-function data_uri($file, $mime) {
-    $contents = file_get_contents($file);
-    $base64 = base64_encode($contents);
-    return "data:" . $mime . ";base64," . $base64;
-}
-
+<?php 
 if (substr_count($_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip'))
     ob_start("ob_gzhandler");
 else
     ob_start();
 ?>
 <!doctype html>
-
 <!--  
 /*
  * ----------------------------------------------------------------------------
@@ -26,7 +18,8 @@ else
  * ----------------------------------------------------------------------------
  */ 
 -->
-<html lang="en" ng-app="myApp" style="background-image: <?php echo data_uri('img/d.JPG', 'image/jpg'); ?>">
+
+<html lang="en" ng-app="myApp" ng-controller="InitCtrl" >
     <head> 
         <title>Diego Schmædech</title>
         <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -39,10 +32,12 @@ else
         <link rel="stylesheet" href="css/app.css"/>
         <link rel="stylesheet" href="css/bootstrap.css"/>
         <link rel="stylesheet" href="css/font-awesome.min.css"> 
+        <link rel="stylesheet" type="text/css"  media="screen" href="css/style.php">
+         
     </head>
     <body>
         <canvas id="hackmouse" width="0" height="0"></canvas>
-         
+        
         <!-- .navbar -->
         <nav class="navbar navbar-default" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -59,7 +54,7 @@ else
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul ng-controller="NavCtrl" class="nav navbar-nav">
-                    <li class="active" ng-class="navClass('view1')"><a href="#/view1" role="button">Persona</a> </li>
+                    <li ng-class="navClass('view1')"><a href="#/view1" role="button">Persona</a> </li>
                     <li ng-class="navClass('view2')"><a href="#/view2" role="button">Work</a></li>
                     <li ng-class="navClass('view3')"><a href="#/view3" role="button">Playing</a>  </li>
                    

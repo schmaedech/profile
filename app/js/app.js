@@ -1,7 +1,6 @@
 'use strict';
 
-var movementStrength = 15;
-
+var movementStrength = 15; 
 var height = movementStrength / $(window).height();
 var width = movementStrength / $(window).width();
 var logX = new Array();
@@ -32,6 +31,7 @@ $("html").mouseup(function(e) {
     }
 
 });
+
 $('#contact-form').submit(function() {
     var submitData = $(this).serialize();
     var $name = $(this).find('input[name="name"]');
@@ -86,8 +86,7 @@ angular.module('myApp', [
     'myApp.services',
     'myApp.directives',
     'myApp.controllers'
-]).
-        config(['$routeProvider', function($routeProvider) {
+]).config(['$routeProvider', function($routeProvider) {
                 $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
                 $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
                 $routeProvider.when('/view3', {templateUrl: 'partials/partial3.html', controller: 'MyCtrl3'});

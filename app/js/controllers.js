@@ -1,17 +1,16 @@
-'use strict';
-
-
-
+'use strict'; 
 
 var myApp = angular.module('myApp.controllers', []);
-
+myApp.controller('InitCtrl', ['$scope', '$location', InitCtrl]);
 myApp.controller('NavCtrl', ['$scope', '$location', NavCtrl]);
 myApp.controller('MyCtrl1', [MyCtrl1]);
 myApp.controller('MyCtrl2', [MyCtrl2]);
 myApp.controller('MyCtrl3', [MyCtrl3]);
 
 var heatmap = null;
-
+function InitCtrl($scope, $location) {
+      
+}
 function NavCtrl($scope, $location) {
     $scope.navClass = function (page) {
         var currentRoute = $location.path().substring(1) || 'view1';
