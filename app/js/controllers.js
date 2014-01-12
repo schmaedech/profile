@@ -41,7 +41,7 @@ function MyCtrl1() {
 
         $.ajax({// Send an offer process with AJAX
             type: 'POST',
-            url: '/send_mail.php',
+            url: 'lib/php/send_mail.php',
             data: submitData + '&action=add',
             dataType: 'text',
             success: function(msg) {
