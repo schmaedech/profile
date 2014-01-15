@@ -1,4 +1,4 @@
-'use strict'; 
+'use strict';
 
 var myApp = angular.module('myApp.controllers', []);
 myApp.controller('InitCtrl', ['$scope', '$location', InitCtrl]);
@@ -9,15 +9,15 @@ myApp.controller('MyCtrl3', [MyCtrl3]);
 
 var heatmap = null;
 function InitCtrl($scope, $location) {
-      
+
 }
 function NavCtrl($scope, $location) {
-    $scope.navClass = function (page) {
+    $scope.navClass = function(page) {
         var currentRoute = $location.path().substring(1) || 'view1';
         return page === currentRoute ? 'active' : '';
-    }; 
+    };
 }
- 
+
 var heatmap = null;
 
 function MyCtrl1() {
@@ -71,7 +71,6 @@ function MyCtrl1() {
     initModal();
 
 }
-
 function MyCtrl2() {
     initModal();
     document.getElementById('resume').src = "http://lattes.cnpq.br/6542682937656418";
@@ -162,14 +161,25 @@ function MyCtrl3() {
         }(activate));
     })();
 
-    $("#heatmapArea").click(function() {
-        $(this).slideUp();
-    });
-    $("#btn-try-with-me").click(function() {
-        $("#heatmapArea").slideToggle();
-    });
+//    $("#heatmapArea").click(function() {
+//        $(this).slideUp();
+//    });
+    // $("#heatmapArea").slideToggle();
 }
+function MyCtrl3HeatToggle($scope, $location) {
+ 
+    $scope.clickToggle = function( ) {
+         $("#heatmapArea").slideToggle(); 
+    };
 
+}
+function MyCtrlHeat($scope, $location) {
+ 
+    $scope.clickSlideUp = function() {
+         $("#heatmapArea").slideUp(); 
+    };
+
+}
 function initModal() {
 
     var overlay = document.querySelector('.md-overlay');

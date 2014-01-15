@@ -10,7 +10,7 @@ else
  * ----------------------------------------------------------------------------
  * "THE DRINKWARE LICENSE" (Revision 1):
  * <diego@schmaedech.com> wrote this file. You can do anything with this file.  
- * There are no licences. But you can help by paying a coffee or my green server.
+ * There are no licenses. But you can help me by paying a coffee or my green server.
  * <a href="http://www.dreamhost.com/donate.cgi?id=17405">
  * <img border="0" alt="Donate towards my web hosting bill!" src="https://secure.newdream.net/donate4.gif" /> </a> 
  * or please! 
@@ -54,9 +54,9 @@ else
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul ng-controller="NavCtrl" class="nav navbar-nav">
-                    <li ng-class="navClass('view1')"><a href="#/view1" role="button">Persona</a> </li>
-                    <li ng-class="navClass('view2')"><a href="#/view2" role="button">Work</a></li>
-                    <li ng-class="navClass('view3')"><a href="#/view3" role="button">Playing</a>  </li>
+                    <li><a href="#/view1" role="button">Persona</a> </li>
+                    <li><a href="#/view2" role="button">Work</a></li>
+                    <li><a href="#/view3" role="button">Playing</a>  </li>
                    
                 </ul>
                  
