@@ -75,7 +75,7 @@ function MyCtrl2() {
     initModal();
     document.getElementById('resume').src = "http://lattes.cnpq.br/6542682937656418";
     document.getElementById('cognisense').src = "http://www.cognisense.com.br";
-    document.getElementById('neovu').src = "http://www.neovu.com.br";
+    document.getElementById('neovu').src = "http://www.neovu.com.br/neovu";
 
 
 }
