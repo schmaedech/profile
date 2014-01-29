@@ -36,8 +36,7 @@ else
          
     </head>
     <body>
-        <canvas id="hackmouse" width="0" height="0"></canvas>
-        
+        <canvas id="hackmouse" width="0" height="0"></canvas> 
         <!-- .navbar -->
         <nav class="navbar navbar-default" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -65,8 +64,7 @@ else
         <div class="container">
             <div ng-view>
             </div> 
-        </div>
-
+        </div> 
         <div class="copyright">app v<span app-version></span>
             <div id="social-bar"> 
                 <a href="https://google.com/+DiegoSchmaedech" target="_blank">
@@ -98,15 +96,13 @@ else
                     <span></span>
                 </a>
             </div>
-        </div> 
-
-        <div class="md-overlay"></div> 
+        </div>  
         <footer>
             <p>{{ '&copy; Diego Schmædech 1982™' | interpolate }}</p>
         </footer>
         <!-- classie.js by @desandro: https://github.com/desandro/classie -->
         <script src="js/classie.js"></script>
-
+       
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="lib/angular/angular.js"></script>
         <script src="lib/angular/angular-route.js"></script>
@@ -119,6 +115,7 @@ else
         <script src="js/modernizr.custom.js"></script> 
         <script  src='js/jquery.placeholder.min.js'></script>
         <script  src='js/heatmap.js'></script>
+       
         <script>
                 (function(i, s, o, g, r, a, m) {
                     i['GoogleAnalyticsObject'] = r;
