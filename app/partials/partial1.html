@@ -1,0 +1,38 @@
+ 
+ <div class="jumbotron">
+    <h1>{{ 'Hello, world!' | interpolate }}</h1>
+    <p>Yo soy Diego Schmædech, and this is a little bit of my virtual worlds.</p>
+    <p><a  href="#/view1" class="btn btn-primary btn-lg md-trigger" data-modal="modal-mail" role="button">Say Hello to Me!</a></p>
+</div>
+
+<div class="md-modal md-effect-1" id="modal-mail">
+    <div class="md-content"> 
+        <div class="form-group">
+            <form id="contact-form" method="post" action="#" >
+                <br>
+                <label>Your info</label>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="name" maxlength="255" placeholder="Name" />
+                    </div>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="email" maxlength="100" placeholder="Email" />
+                    </div>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="subject" placeholder="Subject" />
+                    </div>
+                </div>
+                <br>
+                <label>Message</label>
+                <textarea class="form-control" name="message" placeholder="Message">  </textarea>
+                <br>
+                <input type="submit" class="btn btn-primary" value="Send" />
+                <div class="data-status"> </div>  
+            </form>
+        </div>
+        <div>   
+            <button class="md-close btn btn-primary">Close</button>
+        </div>
+    </div>
+</div> 
+ <div class="md-overlay"></div> 
