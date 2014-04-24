@@ -52,12 +52,8 @@ $('#contact-form').submit(function() {
     $dataStatus.show().html('<div class="alert alert-info"><strong>Loading...</strong></div>');
 
     $.ajax({// Send an offer process with AJAX
-        type: 'POST',
-<<<<<<< HEAD
-        url: 'lib/php/send_mail.php',
-=======
-        url: '/send_mail.php',
->>>>>>> origin/master
+        type: 'POST', 
+        url: 'lib/php/send_mail.php', 
         data: submitData + '&action=add',
         dataType: 'text',
         success: function(msg) {
