@@ -17,7 +17,7 @@ $("html").mousemove(function(e) {
     logX.push(x);
     logY.push(y);
     var r = function() {
-        return Math.floor(Math.random() * 256)
+        return Math.floor(Math.random() * 256);
     };
     $("footer").css('color', "rgba(" + r() + "," + r() + "," + r() + "," + r() / 256 + ")");
     // $("footer").css('color', 'rgba(0,0,0,1)');
