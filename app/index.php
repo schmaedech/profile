@@ -13,7 +13,7 @@ else
  * There are no licenses. But you can help me paying a coffee, a beer or my green server.
  * <a href="http://www.dreamhost.com/donate.cgi?id=17405">
  * <img border="0" alt="Donate towards my web hosting bill!" src="https://secure.newdream.net/donate4.gif" /> </a> 
- * or please! 
+ * or please: 
  * http://www.dreamhost.com/donate.cgi?id=17405 
  * ----------------------------------------------------------------------------
  */ 
@@ -32,7 +32,7 @@ else
         <link rel="stylesheet" href="css/app.css"/>
         <link rel="stylesheet" href="css/bootstrap.css"/>
         <link rel="stylesheet" href="css/font-awesome.min.css"> 
-        <link rel="stylesheet" type="text/css"  media="screen" href="css/style.php"> 
+        <link rel="stylesheet" type="text/css"  href="css/style.php"> 
     </head>
     <body>
         <canvas id="hackmouse" width="0" height="0"></canvas> 
