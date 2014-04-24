@@ -53,7 +53,11 @@ $('#contact-form').submit(function() {
 
     $.ajax({// Send an offer process with AJAX
         type: 'POST',
+<<<<<<< HEAD
         url: 'lib/php/send_mail.php',
+=======
+        url: '/send_mail.php',
+>>>>>>> origin/master
         data: submitData + '&action=add',
         dataType: 'text',
         success: function(msg) {
