@@ -19,7 +19,13 @@ function NavCtrl($scope, $location) {
 }
 
 var heatmap = null;
+function setBackgroundClass(b) {
+    $("html").removeClass("dlagoinha");
+       $("html").removeClass("ester"); 
+          $("html").removeClass("trabalho"); 
+    $("html").addClass(b);
 
+}
 function MyCtrl1() {
     /* Contact us process */
     $('#contact-form').submit(function() {
@@ -69,18 +75,19 @@ function MyCtrl1() {
     });
     /* End contact us process */
     initModal();
-
+    setBackgroundClass("dlagoinha");
 }
 function MyCtrl2() {
     initModal();
     document.getElementById('resume').src = "http://lattes.cnpq.br/6542682937656418";
     document.getElementById('cognisense').src = "http://www.cognisense.com.br";
     document.getElementById('neovu').src = "http://www.neovu.com.br/";
-
+    setBackgroundClass("trabalho");
 
 }
 function MyCtrl3() {
     initModal();
+    setBackgroundClass("ester");
     var config = {
         element: document.getElementById("heatmapArea"),
         radius: 15,
@@ -167,16 +174,16 @@ function MyCtrl3() {
     // $("#heatmapArea").slideToggle();
 }
 function MyCtrl3HeatToggle($scope, $location) {
- 
+
     $scope.clickToggle = function( ) {
-         $("#heatmapArea").slideToggle(); 
+        $("#heatmapArea").slideToggle();
     };
 
 }
 function MyCtrlHeat($scope, $location) {
- 
+
     $scope.clickSlideUp = function() {
-         $("#heatmapArea").slideUp(); 
+        $("#heatmapArea").slideUp();
     };
 
 }

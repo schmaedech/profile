@@ -9,15 +9,15 @@ var logY = new Array();
 $("html").mousemove(function(e) {
     var x = e.pageX;
     var y = e.pageY;
-    $(this).css('background-position', +parseInt(-x / 10) + 'px ' + parseInt(-y / 10) + 'px');
-    $(".jumbotron").css('margin', parseInt(-x / 100) + parseInt(-y / 100) + 'px');
+    $(this).css('background-position', +parseInt(-x / 4) + 'px ' + parseInt(-y / 5) + 'px');
+    $(".jumbotron").css('margin', parseInt(-x / 120) + parseInt(-y / 120) + 'px');
 //    var offset = $(this).offset();
 //    x = e.pageX - offset.left;
 //    y = e.pageY - offset.top;
     logX.push(x);
     logY.push(y);
     var r = function() {
-        return Math.floor(Math.random() * 256);
+        return Math.floor(Math.random() * 256)
     };
     $("footer").css('color', "rgba(" + r() + "," + r() + "," + r() + "," + r() / 256 + ")");
     // $("footer").css('color', 'rgba(0,0,0,1)');
@@ -52,8 +52,8 @@ $('#contact-form').submit(function() {
     $dataStatus.show().html('<div class="alert alert-info"><strong>Loading...</strong></div>');
 
     $.ajax({// Send an offer process with AJAX
-        type: 'POST', 
-        url: 'lib/php/send_mail.php', 
+        type: 'POST',
+        url: 'lib/php/send_mail.php',
         data: submitData + '&action=add',
         dataType: 'text',
         success: function(msg) {
@@ -94,3 +94,4 @@ angular.module('myApp', [
         $routeProvider.when('/view3', {templateUrl: 'partials/partial3.html', controller: 'MyCtrl3'});
         $routeProvider.otherwise({redirectTo: '/view1'});
     }]);
+
