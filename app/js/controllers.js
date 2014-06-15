@@ -7,9 +7,10 @@ myApp.controller('MyCtrl1', [MyCtrl1]);
 myApp.controller('MyCtrl2', [MyCtrl2]);
 myApp.controller('MyCtrl3', [MyCtrl3]);
 
-var heatmap = null;
 function InitCtrl($scope, $location) {
-
+    setTimeout(init, 100);
+    setTimeout(animate, 100);
+      
 }
 function NavCtrl($scope, $location) {
     $scope.navClass = function(page) {
@@ -18,11 +19,10 @@ function NavCtrl($scope, $location) {
     };
 }
 
-var heatmap = null;
 function setBackgroundClass(b) {
     $("html").removeClass("dlagoinha");
-       $("html").removeClass("ester"); 
-          $("html").removeClass("trabalho"); 
+    $("html").removeClass("ester");
+    $("html").removeClass("trabalho");
     $("html").addClass(b);
 
 }
@@ -76,6 +76,7 @@ function MyCtrl1() {
     /* End contact us process */
     initModal();
     setBackgroundClass("dlagoinha");
+    $(".particles").fadeOut("slow");
 }
 function MyCtrl2() {
     initModal();
@@ -83,7 +84,7 @@ function MyCtrl2() {
     document.getElementById('cognisense').src = "http://www.cognisense.com.br";
     document.getElementById('neovu').src = "http://www.neovu.com.br/";
     setBackgroundClass("trabalho");
-
+    $(".particles").fadeOut("slow");
 }
 function MyCtrl3() {
     initModal();
@@ -93,90 +94,17 @@ function MyCtrl3() {
         radius: 15,
         opacity: 50
     };
-
-    heatmap = h337.create(config);
-
-    (function() {
-        var active = false,
-                lastCoords = [],
-                mouseMove = false,
-                mouseOver = false,
-                activate = function() {
-                    active = true;
-                },
-                $ = function(id) {
-                    return document.getElementById(id);
-                },
-                timer = null,
-                simulateEv = function() {
-                    heatmap.store.addDataPoint(lastCoords[0], lastCoords[1]);
-                },
-                antiIdle = function() {
-                    if (mouseOver && !mouseMove && lastCoords && !timer) {
-                        timer = setInterval(simulateEv, 1000);
-                    }
-                };
+    initMap(config);
+    $(".particles").fadeIn(1500);
 
 
-        (function(fn) {
-            setInterval(fn, 1000);
-        }(antiIdle));
-        var tmp = $("heatmapArea");
-
-        tmp.onmouseout = function() {
-            mouseOver = false;
-            if (timer) {
-                clearInterval(timer)
-                timer = null;
-            }
-        };
-
-        tmp.onmousemove = tmp.onclick = function(ev) {
-            mouseMove = true;
-            mouseOver = true;
-            if (active) {
-                if (timer) {
-                    clearInterval(timer);
-                    timer = null;
-                }
-
-                var pos = h337.util.mousePosition(ev);
-
-                heatmap.store.addDataPoint(pos[0], pos[1]);
-                lastCoords = [pos[0], pos[1]];
-
-                active = false;
-            }
-            mouseMove = false;
-        };
-        tmp["ontouchmove"] = function(ev) {
-            var touch = ev.touches[0],
-                    // simulating a mousemove event           
-                    simulatedEvent = document.createEvent("MouseEvent");
-            simulatedEvent.initMouseEvent("mousemove", true, true, window, 1,
-                    touch.screenX, touch.screenY,
-                    touch.clientX, touch.clientY, false,
-                    false, false, false, 0, null);
-            // dispatching the simulated event              
-            touch.target.dispatchEvent(simulatedEvent);
-            // we don't want to have the default iphone scrolling behaviour ontouchmove  
-            ev.preventDefault();
-        };
-
-        (function(fn) {
-            setInterval(fn, 50);
-        }(activate));
-    })();
-
-//    $("#heatmapArea").click(function() {
-//        $(this).slideUp();
-//    });
-    // $("#heatmapArea").slideToggle();
 }
 function MyCtrl3HeatToggle($scope, $location) {
 
     $scope.clickToggle = function( ) {
-        $("#heatmapArea").slideToggle();
+        // $("#heatmapArea").slideToggle();
+        $(".particles").toggle("slow");
+
     };
 
 }
@@ -229,5 +157,9 @@ function initModal() {
 
 
 }
+
+
+
+
 
  

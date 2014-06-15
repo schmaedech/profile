@@ -13,6 +13,9 @@ canvas{
     left: 0;
     position: absolute;
 }
+.particles{
+    display: none;
+}
 iframe{
     border: 0.1em solid rgba(250,250,250,.2);
     border-radius: 5px;
