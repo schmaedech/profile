@@ -1,55 +1,37 @@
 
-var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
 var container, stats;
-var camera, scene, renderer;
-var particles, particle, count = 0;
+var camera, scene, renderer, geometry;
+
 var mouseX = 0, mouseY = 0;
 var windowHalfX = window.innerWidth / 2;
 var windowHalfY = window.innerHeight / 2;
+var gui;
 
 function init() {
 
     container = document.createElement('div');
-    container.className = 'particles';
+    // container.className = 'particles';
     document.body.appendChild(container);
 
     camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
-    camera.position.z = 1000;
-
+    camera.position.z = 500;
     scene = new THREE.Scene();
+    scene.fog = new THREE.Fog(0x000, 100, 1000);
 
-    particles = new Array();
+    if (window.WebGLRenderingContext)
+        renderer = new THREE.WebGLRenderer({alpha: true});
+    else
+        renderer = new THREE.CanvasRenderer({alpha: true});
 
-    var PI2 = Math.PI * 2;
-    var material = new THREE.SpriteCanvasMaterial({
-        color: 0xf3f3f3,
-        program: function(context) {
-
-            context.beginPath();
-            context.arc(0, 0, 0.5, 0, PI2, true);
-            context.fill();
-
-        }
-
-    });
-
-    var i = 0;
-
-    for (var ix = 0; ix < AMOUNTX; ix++) {
-
-        for (var iy = 0; iy < AMOUNTY; iy++) {
-
-            particle = particles[ i++ ] = new THREE.Sprite(material);
-            particle.position.x = ix * SEPARATION - ((AMOUNTX * SEPARATION) / 2);
-            particle.position.z = iy * SEPARATION - ((AMOUNTY * SEPARATION) / 2);
-            scene.add(particle);
-
-        }
-
-    }
-
-    renderer = new THREE.CanvasRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(scene.fog.color, 0);
+    container.appendChild(renderer.domElement);
+    //renderer = new THREE.CanvasRenderer({alpha: true});
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(scene.fog.color, 0);
+
     container.appendChild(renderer.domElement);
 
     stats = new Stats();
@@ -57,6 +39,8 @@ function init() {
     stats.domElement.style.bottom = '0px';
     stats.domElement.style.right = '0px';
     container.appendChild(stats.domElement);
+
+
 
     document.addEventListener('mousemove', onDocumentMouseMove, false);
     document.addEventListener('touchstart', onDocumentTouchStart, false);
@@ -117,7 +101,7 @@ function animate() {
 
     render();
     stats.update();
-    
+
 }
 
 function render() {
@@ -126,24 +110,8 @@ function render() {
     camera.position.y += (-mouseY - camera.position.y) * .05;
     camera.lookAt(scene.position);
 
-    var i = 0;
-
-    for (var ix = 0; ix < AMOUNTX; ix++) {
-
-        for (var iy = 0; iy < AMOUNTY; iy++) {
-
-            particle = particles[ i++ ];
-            particle.position.y = (Math.sin((ix + count) * 0.3) * 50) +
-                    (Math.sin((iy + count) * 0.5) * 50);
-            particle.scale.x = particle.scale.y = (Math.sin((ix + count) * 0.3) + 1) * 4 +
-                    (Math.sin((iy + count) * 0.5) + 1) * 4;
-
-        }
-
-    }
 
     renderer.render(scene, camera);
 
-    count += 0.1;
 
 }

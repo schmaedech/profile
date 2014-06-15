@@ -8,9 +8,7 @@ myApp.controller('MyCtrl2', [MyCtrl2]);
 myApp.controller('MyCtrl3', [MyCtrl3]);
 
 function InitCtrl($scope, $location) {
-    setTimeout(init, 100);
-    setTimeout(animate, 100);
-      
+  init();
 }
 function NavCtrl($scope, $location) {
     $scope.navClass = function(page) {
@@ -76,7 +74,11 @@ function MyCtrl1() {
     /* End contact us process */
     initModal();
     setBackgroundClass("dlagoinha");
-    $(".particles").fadeOut("slow");
+   
+ 
+    initBirds();
+    animateBirds();
+    //$(".particles").fadeOut("slow");
 }
 function MyCtrl2() {
     initModal();
@@ -84,7 +86,14 @@ function MyCtrl2() {
     document.getElementById('cognisense').src = "http://www.cognisense.com.br";
     document.getElementById('neovu').src = "http://www.neovu.com.br/";
     setBackgroundClass("trabalho");
-    $(".particles").fadeOut("slow");
+      if (container.hasChildNodes())
+    {
+        while (container.childNodes.length >= 1)
+        {
+            container.removeChild(container.firstChild);
+        }
+    }
+    // $(".particles").fadeOut("slow");
 }
 function MyCtrl3() {
     initModal();
@@ -94,8 +103,11 @@ function MyCtrl3() {
         radius: 15,
         opacity: 50
     };
-    initMap(config);
-    $(".particles").fadeIn(1500);
+    initHeatMap(config);
+      
+initWaves();
+animateWaves();
+    // $(".particles").fadeIn(1500);
 
 
 }
@@ -103,7 +115,7 @@ function MyCtrl3HeatToggle($scope, $location) {
 
     $scope.clickToggle = function( ) {
         // $("#heatmapArea").slideToggle();
-        $(".particles").toggle("slow");
+        // $(".particles").toggle("slow");
 
     };
 

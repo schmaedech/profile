@@ -1,6 +1,6 @@
 
 var heatmap = null; 
-function initMap(config) {
+function initHeatMap(config) {
     heatmap = h337.create(config);
     var active = false,
             lastCoords = [],
