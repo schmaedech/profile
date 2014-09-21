@@ -101,7 +101,7 @@ var simulator;
 
 function initBirds() {
 
-   //camera.position.z = 350;
+   camera.position.z = 1350;
     scene = new THREE.Scene();
     scene.fog = new THREE.Fog(0x000, 100, 1000);
     renderer = new THREE.WebGLRenderer({alpha: true});

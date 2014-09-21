@@ -8,7 +8,7 @@ myApp.controller('MyCtrl2', [MyCtrl2]);
 myApp.controller('MyCtrl3', [MyCtrl3]);
 
 function InitCtrl($scope, $location) {
-  init();
+    init();
 }
 function NavCtrl($scope, $location) {
     $scope.navClass = function(page) {
@@ -74,8 +74,8 @@ function MyCtrl1() {
     /* End contact us process */
     initModal();
     setBackgroundClass("dlagoinha");
-   
- 
+
+
     initBirds();
     animateBirds();
     //$(".particles").fadeOut("slow");
@@ -86,7 +86,7 @@ function MyCtrl2() {
     document.getElementById('cognisense').src = "http://www.cognisense.com.br";
     document.getElementById('neovu').src = "http://www.neovu.com.br/";
     setBackgroundClass("trabalho");
-      if (container.hasChildNodes())
+    if (container.hasChildNodes())
     {
         while (container.childNodes.length >= 1)
         {
@@ -104,11 +104,12 @@ function MyCtrl3() {
         opacity: 50
     };
     initHeatMap(config);
-      
-initWaves();
-animateWaves();
-    // $(".particles").fadeIn(1500);
 
+    initWaves();
+    animateWaves();
+    // $(".particles").fadeIn(1500);
+//  initParticleWaves();
+//    animateParticleWaves();
 
 }
 function MyCtrl3HeatToggle($scope, $location) {
