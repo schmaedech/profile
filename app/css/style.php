@@ -15,8 +15,8 @@ foreach ($sortedArray as &$filename) {
         $base64 = base64_encode($beer);
         $info = pathinfo($filename);
         $filename = basename($filename, '.' . $info['extension']);
-        echo '.' . $filename . '{  background-image: url("data:' . $info['extension'] . ';base64,' . $base64 . '" );} ';
-    //echo '.' . $filename . '{   background-repeat:no-repeat; background-position: center center; background-image: url("../img/'.$filename. '.'.$info['extension'].'" );} ';
+       // echo '.' . $filename . '{  background-image: url("data:' . $info['extension'] . ';base64,' . $base64 . '" );} ';
+    echo '.' . $filename . '{   background-repeat:no-repeat; background-position: center center; background-image: url("../img/'.$filename. '.'.$info['extension'].'" );} ';
     
     }
 }
