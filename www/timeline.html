@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="timeline-embed"></div>
+        <script type="text/javascript">
+            var timeline_config = {
+                width: '100%',
+                height: '600',
+                source: 'https://docs.google.com/spreadsheets/d/1MwyE4q4IY5PX0y25oogBPGsr_8vxfcm9bssO3sI9Kjk/pubhtml',
+                embed_id: 'timeline-embed', //OPTIONAL USE A DIFFERENT DIV ID FOR EMBED
+                start_at_end: false, //OPTIONAL START AT LATEST DATE
+                start_at_slide: '0', //OPTIONAL START AT SPECIFIC SLIDE
+                start_zoom_adjust: '1', //OPTIONAL TWEAK THE DEFAULT ZOOM LEVEL
+                hash_bookmark: true, //OPTIONAL LOCATION BAR HASHES
+                font: 'Bevan-PotanoSans', //OPTIONAL FONT
+                debug: true, //OPTIONAL DEBUG TO CONSOLE              
+                maptype: 'watercolor' 
+            }
+        </script>
+        <script type="text/javascript" src="https://cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js"></script>
+        <!-- always load the CSS -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.knightlab.com/libs/timeline/latest/css/timeline.css">
+        <!-- and then one of either -->
+        <script type="text/javascript" src="https://cdn.knightlab.com/libs/timeline/latest/js/timeline.js"></script>
+        <!-- or -->
+        <script type="text/javascript" src="https://cdn.knightlab.com/libs/timeline/latest/js/timeline-min.js"></script>
+        <!-- but no need for both -->
+    </body>
+</html>

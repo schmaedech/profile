@@ -1,0 +1,7 @@
+.dlagoinha{   background-repeat:no-repeat; background-position: center center; background-image: url("../img/dlagoinha.jpg" );} 
+.trabalho{   background-repeat:no-repeat; background-position: center center; background-image: url("../img/trabalho.jpg" );} 
+.ester{   background-repeat:no-repeat; background-position: center center; background-image: url("../img/ester.jpg" );} 
+.ciencia{   background-repeat:no-repeat; background-position: center center; background-image: url("../img/ciencia.png" );} 
+body{
+    background: transparent;
+}
